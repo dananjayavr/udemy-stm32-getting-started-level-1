@@ -1,0 +1,27 @@
+/*
+ * rcc.c
+ *
+ *  Created on: 2 déc. 2021
+ *      Author: dananjaya
+ */
+
+
+#include "rcc.h"
+
+/*
+ * @brief HSE configuration
+ */
+void rcc_HSE_config(void) {
+  /*
+   * configuration parameters --> STM32F103 Clock tree
+   * HSE = 8 MHz
+   * PLL = x9 (72 MHz system clock)
+   * USB prescaler = /1.5
+   * AHB prescaler = /1
+   * Cortex prescaler (i.e. SysTick) = /1
+   *
+   * APB1 prescaler = /2 (36 Mhz, 72 MHz)
+   * APB2 prescaler = /1 (72 MHz)
+   * ADC prescaler = /6 (12 MHz)
+   */
+}

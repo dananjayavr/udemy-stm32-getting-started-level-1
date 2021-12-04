@@ -1,0 +1,47 @@
+/*
+ * rcc.c
+ *
+ *  Created on: 2 déc. 2021
+ *      Author: dananjaya
+ */
+
+
+#include "rcc.h"
+
+/*
+ * @brief HSE configuration
+ */
+void rcc_HSE_config(void) {
+  /*
+   * configuration parameters --> STM32F103 Clock tree
+   * HSE = 8 MHz
+   * PLL = x9 (72 MHz system clock)
+   * USB divider = /1.5
+   * AHB divider = /1
+   * Cortex divider (i.e. SysTick) = /1
+   *
+   * APB1 divider = /2 (36 Mhz, 72 MHz)
+   * APB2 divider = /1 (72 MHz)
+   * ADC divider = /6 (12 MHz)
+   */
+
+  // PLL configuration
+  // Set PLL multiplier to x9
+  //RCC->CFGR &= ~(0xFUL << 18); // Clear bitfields [21:18] 0xF = 1111
+  RCC->CFGR &= ~(RCC_CFGR_PLLMULL); // same as above
+  RCC->CFGR |= (7UL << 18); // setting PLL multiplier to 9
+
+  // USB divider (/1.5)
+  RCC->CFGR &= ~(RCC_CFGR_USBPRE);
+
+  // HSE oscillator (enable external oscillator, wait for it to become stable, use it as source for PLL, wait until PLL kicks in)
+  RCC->CFGR |= (RCC_CR_HSEON);
+  // wait for it to stabilize
+  while((RCC->CFGR & RCC_CR_HSERDY) == 0);
+  // select HSE as PLL source
+
+
+
+
+
+}

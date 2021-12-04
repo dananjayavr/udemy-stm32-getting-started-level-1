@@ -1,0 +1,25 @@
+/*
+ * rcc.h
+ *
+ *  Created on: 2 déc. 2021
+ *      Author: dananjaya
+ */
+
+#ifndef INC_RCC_H_
+#define INC_RCC_H_
+
+#include "main.h"
+
+/*
+ * @brief HSE configuration
+ */
+void rcc_HSE_config(void);
+
+/*
+ * @brief SysTick configuration
+ * @ param[in] reload value
+ */
+
+void rcc_SysTick_config(uint32_t arr);
+
+#endif /* INC_RCC_H_ */

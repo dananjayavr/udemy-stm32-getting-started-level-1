@@ -1,0 +1,52 @@
+/*
+ * uart.h
+ *
+ *  Created on: 4 déc. 2021
+ *      Author: dananjaya
+ */
+
+#include "uart.h"
+
+/**
+ * @brief UART1 GPIO Configuration
+ */
+void uart_UART1_GPIO_config(void) {
+  // PA9 = Tx
+  // PA10 = Rx
+
+  // Enable Port A clock
+  RCC->APB2ENR |= RCC_APB2ENR_IOPAEN;
+  // Mode to alternate function (UART1)
+  GPIOA->CRH &= ~(GPIO_CRH_CNF9);
+  GPIOA->CRH |= GPIO_CRH_CNF9_1;
+  GPIOA->CRH &= ~(GPIO_CRH_CNF10);
+  GPIOA->CRH |= GPIO_CRH_CNF10_0;
+  // Output max 10 MHz
+  GPIOA->CRH &= ~(GPIO_CRH_MODE9);
+  GPIOA->CRH |= GPIO_CRH_MODE9_1;
+  GPIOA->CRH &= ~(GPIO_CRH_MODE10);
+  GPIOA->CRH |= GPIO_CRH_MODE9_0;
+  // Map PA9, PA10 to UART1
+  AFIO->MAPR &= ~(AFIO_MAPR_USART1_REMAP);
+  RCC->APB2ENR |= RCC_APB2ENR_AFIOEN;
+}
+
+/**
+ * @brief UART1 Peripheral Configuration
+ */
+void uart_UART1_config(void) {
+  // Enable UART1 clock
+  // Enable Tx
+  // Parity to Even
+  // Word length to 8-bits
+  // Stop bits to be 1
+  // Disable HW flow control
+  // Set baudrate to 115200
+  // Enable peripheral clock
+  // Enalbe UART peripheral
+}
+
+/**
+ * @brief UART1 Tx
+ */
+bool uart_UART1_Tx(uint8_t *data, uint8_t len, uint32_t timeout);

@@ -1,0 +1,10 @@
+21:41:28 **** Clean-only build of configuration Debug for project 01_Clocks ****
+make -j6 clean 
+rm -rf ./Startup/startup_stm32f103xb.d ./Startup/startup_stm32f103xb.o
+rm -rf ./Peripherals/Src/rcc.d ./Peripherals/Src/rcc.o
+rm -rf ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/system_stm32f1xx.d ./Core/Src/system_stm32f1xx.o
+rm -rf 01_Clocks.bin 01_Clocks.elf 01_Clocks.list default.size.stdout
+ 
+
+21:41:30 Build Finished. 0 errors, 0 warnings. (took 2s.73ms)
+

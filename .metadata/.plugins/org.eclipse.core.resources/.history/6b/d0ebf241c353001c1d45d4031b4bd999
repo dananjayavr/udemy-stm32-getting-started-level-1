@@ -1,0 +1,10 @@
+#include "main.h"
+#include "rcc.h"
+
+int main(void)
+{
+  while(1)
+  {
+
+  }
+}

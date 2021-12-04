@@ -1,0 +1,4 @@
+"./Core/Src/main.o"
+"./Core/Src/system_stm32f1xx.o"
+"./Peripherals/Src/rcc.o"
+"./Startup/startup_stm32f103xb.o"

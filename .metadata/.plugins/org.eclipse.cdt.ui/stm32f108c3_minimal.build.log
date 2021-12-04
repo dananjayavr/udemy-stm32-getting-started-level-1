@@ -1,0 +1,10 @@
+21:31:25 **** Incremental Build of configuration Debug for project stm32f108c3_minimal ****
+make -j6 all 
+arm-none-eabi-size   stm32f108c3_minimal.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16380	    472	   1600	  18452	   4814	stm32f108c3_minimal.elf
+Finished building: default.size.stdout
+ 
+
+21:31:25 Build Finished. 0 errors, 0 warnings. (took 216ms)
+

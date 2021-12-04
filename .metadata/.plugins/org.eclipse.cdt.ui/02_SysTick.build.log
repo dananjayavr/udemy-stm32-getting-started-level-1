@@ -1,0 +1,20 @@
+16:08:23 **** Incremental Build of configuration Debug for project 02_SysTick ****
+make -j6 all 
+arm-none-eabi-gcc "../Peripherals/Src/rcc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32F103xB -c -I"F:/__WORKSPACES/STM32CubeIDE/Udemy_STM32/02_SysTick/Core/Inc" -I"F:/__WORKSPACES/STM32CubeIDE/Udemy_STM32/02_SysTick/CMSIS/Include" -I"F:/__WORKSPACES/STM32CubeIDE/Udemy_STM32/02_SysTick/Peripherals/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Peripherals/Src/rcc.d" -MT"Peripherals/Src/rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Peripherals/Src/rcc.o"
+arm-none-eabi-gcc -o "02_SysTick.elf" @"objects.list"   -mcpu=cortex-m3 -T"F:\__WORKSPACES\STM32CubeIDE\Udemy_STM32\02_SysTick\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="02_SysTick.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 02_SysTick.elf
+ 
+arm-none-eabi-size   02_SysTick.elf 
+arm-none-eabi-objdump -h -S  02_SysTick.elf  > "02_SysTick.list"
+arm-none-eabi-objcopy  -O binary  02_SysTick.elf  "02_SysTick.bin"
+   text	   data	    bss	    dec	    hex	filename
+   1084	      8	   1568	   2660	    a64	02_SysTick.elf
+Finished building: default.size.stdout
+ 
+Finished building: 02_SysTick.bin
+Finished building: 02_SysTick.list
+ 
+ 
+
+16:08:23 Build Finished. 0 errors, 0 warnings. (took 823ms)
+
