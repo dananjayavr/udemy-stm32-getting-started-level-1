@@ -1,25 +1,20 @@
-21:39:48 **** Build of configuration Debug for project 03_Printf ****
+23:21:33 **** Incremental Build of configuration Debug for project 04_GPIO ****
 make -j6 all 
-arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103xb.d" -MT"Startup/startup_stm32f103xb.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103xb.o" "../Startup/startup_stm32f103xb.s"
-arm-none-eabi-gcc "../Peripherals/Src/rcc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32F103xB -c -I"F:/__WORKSPACES/STM32CubeIDE/Udemy_STM32/03_Printf/Core/Inc" -I"F:/__WORKSPACES/STM32CubeIDE/Udemy_STM32/03_Printf/CMSIS/Include" -I"F:/__WORKSPACES/STM32CubeIDE/Udemy_STM32/03_Printf/Peripherals/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Peripherals/Src/rcc.d" -MT"Peripherals/Src/rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Peripherals/Src/rcc.o"
-arm-none-eabi-gcc "../Peripherals/Src/uart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32F103xB -c -I"F:/__WORKSPACES/STM32CubeIDE/Udemy_STM32/03_Printf/Core/Inc" -I"F:/__WORKSPACES/STM32CubeIDE/Udemy_STM32/03_Printf/CMSIS/Include" -I"F:/__WORKSPACES/STM32CubeIDE/Udemy_STM32/03_Printf/Peripherals/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Peripherals/Src/uart.d" -MT"Peripherals/Src/uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Peripherals/Src/uart.o"
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32F103xB -c -I"F:/__WORKSPACES/STM32CubeIDE/Udemy_STM32/03_Printf/Core/Inc" -I"F:/__WORKSPACES/STM32CubeIDE/Udemy_STM32/03_Printf/CMSIS/Include" -I"F:/__WORKSPACES/STM32CubeIDE/Udemy_STM32/03_Printf/Peripherals/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc "../Core/Src/printf_redirect.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32F103xB -c -I"F:/__WORKSPACES/STM32CubeIDE/Udemy_STM32/03_Printf/Core/Inc" -I"F:/__WORKSPACES/STM32CubeIDE/Udemy_STM32/03_Printf/CMSIS/Include" -I"F:/__WORKSPACES/STM32CubeIDE/Udemy_STM32/03_Printf/Peripherals/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/printf_redirect.d" -MT"Core/Src/printf_redirect.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/printf_redirect.o"
-arm-none-eabi-gcc "../Core/Src/system_stm32f1xx.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32F103xB -c -I"F:/__WORKSPACES/STM32CubeIDE/Udemy_STM32/03_Printf/Core/Inc" -I"F:/__WORKSPACES/STM32CubeIDE/Udemy_STM32/03_Printf/CMSIS/Include" -I"F:/__WORKSPACES/STM32CubeIDE/Udemy_STM32/03_Printf/Peripherals/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/system_stm32f1xx.d" -MT"Core/Src/system_stm32f1xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/system_stm32f1xx.o"
-arm-none-eabi-gcc -o "03_Printf.elf" @"objects.list"   -mcpu=cortex-m3 -T"F:\__WORKSPACES\STM32CubeIDE\Udemy_STM32\03_Printf\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="03_Printf.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 03_Printf.elf
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32F103xB -c -I"F:/__WORKSPACES/STM32CubeIDE/Udemy_STM32/04_GPIO/Core/Inc" -I"F:/__WORKSPACES/STM32CubeIDE/Udemy_STM32/04_GPIO/CMSIS/Include" -I"F:/__WORKSPACES/STM32CubeIDE/Udemy_STM32/04_GPIO/Peripherals/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "04_GPIO.elf" @"objects.list"   -mcpu=cortex-m3 -T"F:\__WORKSPACES\STM32CubeIDE\Udemy_STM32\04_GPIO\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="04_GPIO.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 04_GPIO.elf
  
-arm-none-eabi-size   03_Printf.elf 
-arm-none-eabi-objdump -h -S  03_Printf.elf  > "03_Printf.list"
-arm-none-eabi-objcopy  -O ihex  03_Printf.elf  "03_Printf.hex"
-arm-none-eabi-objcopy  -O binary  03_Printf.elf  "03_Printf.bin"
+arm-none-eabi-size   04_GPIO.elf 
+arm-none-eabi-objdump -h -S  04_GPIO.elf  > "04_GPIO.list"
+arm-none-eabi-objcopy  -O ihex  04_GPIO.elf  "04_GPIO.hex"
+arm-none-eabi-objcopy  -O binary  04_GPIO.elf  "04_GPIO.bin"
    text	   data	    bss	    dec	    hex	filename
-  16212	    472	   1600	  18284	   476c	03_Printf.elf
+  16388	    472	   1600	  18460	   481c	04_GPIO.elf
 Finished building: default.size.stdout
  
-Finished building: 03_Printf.bin
-Finished building: 03_Printf.list
-Finished building: 03_Printf.hex
+Finished building: 04_GPIO.hex
+Finished building: 04_GPIO.bin
  
  
+Finished building: 04_GPIO.list
  

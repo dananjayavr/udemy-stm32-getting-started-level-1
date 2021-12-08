@@ -1,0 +1,23 @@
+23:21:33 **** Incremental Build of configuration Debug for project 04_GPIO ****
+make -j6 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32F103xB -c -I"F:/__WORKSPACES/STM32CubeIDE/Udemy_STM32/04_GPIO/Core/Inc" -I"F:/__WORKSPACES/STM32CubeIDE/Udemy_STM32/04_GPIO/CMSIS/Include" -I"F:/__WORKSPACES/STM32CubeIDE/Udemy_STM32/04_GPIO/Peripherals/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "04_GPIO.elf" @"objects.list"   -mcpu=cortex-m3 -T"F:\__WORKSPACES\STM32CubeIDE\Udemy_STM32\04_GPIO\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="04_GPIO.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 04_GPIO.elf
+ 
+arm-none-eabi-size   04_GPIO.elf 
+arm-none-eabi-objdump -h -S  04_GPIO.elf  > "04_GPIO.list"
+arm-none-eabi-objcopy  -O ihex  04_GPIO.elf  "04_GPIO.hex"
+arm-none-eabi-objcopy  -O binary  04_GPIO.elf  "04_GPIO.bin"
+   text	   data	    bss	    dec	    hex	filename
+  16388	    472	   1600	  18460	   481c	04_GPIO.elf
+Finished building: default.size.stdout
+ 
+Finished building: 04_GPIO.hex
+Finished building: 04_GPIO.bin
+ 
+ 
+Finished building: 04_GPIO.list
+ 
+
+23:21:34 Build Finished. 0 errors, 0 warnings. (took 878ms)
+
