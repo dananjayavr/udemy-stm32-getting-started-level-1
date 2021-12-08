@@ -49,3 +49,51 @@ void gpio_LED_toggleGreen(void) {
 void gpio_LED_toggleRed(void) {
   TOGGLE_BIT(GPIOB->ODR,GPIO_ODR_ODR14);
 }
+
+void gpio_PB_config(void) {
+  // Enable clock port A
+  SET_BIT(RCC->APB2ENR,RCC_APB2ENR_IOPAEN);
+  // Input mode
+  CLEAR_BIT(GPIOA->CRL, GPIO_CRL_MODE0);
+  // Floating
+  CLEAR_BIT(GPIOA->CRL, GPIO_CRL_CNF0);
+  SET_BIT(GPIOA->CRL, GPIO_CRL_CNF0_0);
+}
+
+bool gpio_PB_read(void) {
+  return (bool)(GPIOA->IDR & GPIO_IDR_IDR0);
+  //return 0;
+}
+
+void gpio_SS_config(void) {
+  // PA8
+  // Enable clock port A
+  SET_BIT(RCC->APB2ENR, RCC_APB2ENR_IOPAEN);
+  // Input mode
+  CLEAR_BIT(GPIOA->CRH, GPIO_CRH_MODE8);
+  // Floating
+  CLEAR_BIT(GPIOA->CRH, GPIO_CRH_CNF8);
+  SET_BIT(GPIOA->CRH, GPIO_CRH_CNF8_0);
+
+  // PA15
+  // Enable clock port A
+  SET_BIT(RCC->APB2ENR, RCC_APB2ENR_IOPAEN);
+  // Input mode
+  CLEAR_BIT(GPIOA->CRH, GPIO_CRH_MODE15);
+  // Floating
+  CLEAR_BIT(GPIOA->CRH, GPIO_CRH_CNF15);
+  SET_BIT(GPIOA->CRH, GPIO_CRH_CNF15_0);
+  // Remap PA15 from JTAG to IO
+  SET_BIT(RCC->APB2ENR,  RCC_APB2ENR_AFIOEN);
+  SET_BIT(RCC->APB2ENR, RCC_APB1ENR_PWREN);
+  CLEAR_BIT(AFIO->MAPR, AFIO_MAPR_SWJ_CFG);
+  SET_BIT(AFIO->MAPR, AFIO_MAPR_SWJ_CFG_1);
+
+}
+
+bool gpio_SS1_read(void) {
+  return (bool)(GPIOA->IDR & GPIO_IDR_IDR8);
+}
+bool gpio_SS2_read(void) {
+  return (bool)(GPIOA->IDR & GPIO_IDR_IDR15);
+}

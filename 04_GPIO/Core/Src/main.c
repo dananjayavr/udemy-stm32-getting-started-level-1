@@ -10,16 +10,18 @@ int main(void)
   // configure UART peripheral
   uart_UART1_GPIO_config();
   uart_UART1_config();
-  // config GPIO
+  // config GPIO LED
   gpio_LED_config();
-
-  gpio_LED_toggleRed();
+  // config GPIO PB
+  gpio_PB_config();
+  // config Slide switches
+  gpio_SS_config();
 
   printf("Program is starting...\r\n");
   while(1)
   {
-    gpio_LED_toggleRed();
-    gpio_LED_toggleGreen();
+    gpio_LED_writeRed(gpio_SS1_read());
+    gpio_LED_writeGreen(gpio_SS2_read());
     printf("Hello, STM32 World!\r\n");
     rcc_msDelayTicks(1000);
   }

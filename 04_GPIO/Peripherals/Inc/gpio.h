@@ -25,4 +25,25 @@ void gpio_LED_writeRed(bool state);
 void gpio_LED_toggleGreen(void);
 void gpio_LED_toggleRed(void);
 
+/*
+ * @brief Button configuration (PA0)
+ */
+void gpio_PB_config(void);
+
+/*
+ * @brief Read push-button
+ */
+bool gpio_PB_read(void);
+
+/*
+ * @brief Slide switches configuration (PA8, PA15)
+ */
+void gpio_SS_config(void);
+
+/*
+ * @brief Read slide switches
+ */
+bool gpio_SS1_read(void);
+bool gpio_SS2_read(void);
+
 #endif /* INC_GPIO_H_ */
