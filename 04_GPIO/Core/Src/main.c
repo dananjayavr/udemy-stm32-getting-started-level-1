@@ -21,7 +21,8 @@ int main(void)
   while(1)
   {
     gpio_LED_writeRed(gpio_SS1_read());
-    gpio_LED_writeGreen(gpio_SS2_read());
+    //gpio_LED_writeGreen(gpio_SS2_read());
+    gpio_LED_writeGreen(gpio_PB_read());
     printf("Hello, STM32 World!\r\n");
     rcc_msDelayTicks(1000);
   }
