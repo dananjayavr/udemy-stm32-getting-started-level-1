@@ -1,20 +1,21 @@
-21:03:51 **** Incremental Build of configuration Debug for project 04_4_Digits_Display ****
+21:41:05 **** Incremental Build of configuration Debug for project 05_EXTI ****
 make -j4 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32F103xB -c -I"D:/__Trainings/udemy-stm32-getting-started-level-1/04_4_Digits_Display/Core/Inc" -I"D:/__Trainings/udemy-stm32-getting-started-level-1/04_4_Digits_Display/CMSIS/Include" -I"D:/__Trainings/udemy-stm32-getting-started-level-1/04_4_Digits_Display/Peripherals/Inc" -I"D:/__Trainings/udemy-stm32-getting-started-level-1/04_4_Digits_Display/Application/Display" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "04_4_Digits_Display.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\__Trainings\udemy-stm32-getting-started-level-1\04_4_Digits_Display\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="04_4_Digits_Display.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 04_4_Digits_Display.elf
+arm-none-eabi-gcc "../Peripherals/Src/exti.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32F103xB -c -I"D:/__Trainings/udemy-stm32-getting-started-level-1/05_EXTI/Core/Inc" -I"D:/__Trainings/udemy-stm32-getting-started-level-1/05_EXTI/CMSIS/Include" -I"D:/__Trainings/udemy-stm32-getting-started-level-1/05_EXTI/Peripherals/Inc" -I"D:/__Trainings/udemy-stm32-getting-started-level-1/05_EXTI/Application/Display" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Peripherals/Src/exti.d" -MT"Peripherals/Src/exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Peripherals/Src/exti.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32F103xB -c -I"D:/__Trainings/udemy-stm32-getting-started-level-1/05_EXTI/Core/Inc" -I"D:/__Trainings/udemy-stm32-getting-started-level-1/05_EXTI/CMSIS/Include" -I"D:/__Trainings/udemy-stm32-getting-started-level-1/05_EXTI/Peripherals/Inc" -I"D:/__Trainings/udemy-stm32-getting-started-level-1/05_EXTI/Application/Display" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "05_EXTI.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\__Trainings\udemy-stm32-getting-started-level-1\05_EXTI\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="05_EXTI.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 05_EXTI.elf
  
-arm-none-eabi-size   04_4_Digits_Display.elf 
-arm-none-eabi-objdump -h -S  04_4_Digits_Display.elf  > "04_4_Digits_Display.list"
-arm-none-eabi-objcopy  -O ihex  04_4_Digits_Display.elf  "04_4_Digits_Display.hex"
-arm-none-eabi-objcopy  -O binary  04_4_Digits_Display.elf  "04_4_Digits_Display.bin"
+arm-none-eabi-size   05_EXTI.elf 
+arm-none-eabi-objdump -h -S  05_EXTI.elf  > "05_EXTI.list"
+arm-none-eabi-objcopy  -O ihex  05_EXTI.elf  "05_EXTI.hex"
    text	   data	    bss	    dec	    hex	filename
-  17748	    484	   1612	  19844	   4d84	04_4_Digits_Display.elf
+  16796	    472	   1600	  18868	   49b4	05_EXTI.elf
+arm-none-eabi-objcopy  -O binary  05_EXTI.elf  "05_EXTI.bin"
 Finished building: default.size.stdout
  
-Finished building: 04_4_Digits_Display.hex
-Finished building: 04_4_Digits_Display.bin
+Finished building: 05_EXTI.hex
+Finished building: 05_EXTI.bin
  
  
-Finished building: 04_4_Digits_Display.list
+Finished building: 05_EXTI.list
  
