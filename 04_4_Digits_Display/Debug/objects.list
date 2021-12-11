@@ -1,0 +1,8 @@
+"./Application/Display/tm1637.o"
+"./Core/Src/main.o"
+"./Core/Src/printf_redirect.o"
+"./Core/Src/system_stm32f1xx.o"
+"./Peripherals/Src/gpio.o"
+"./Peripherals/Src/rcc.o"
+"./Peripherals/Src/uart.o"
+"./Startup/startup_stm32f103xb.o"

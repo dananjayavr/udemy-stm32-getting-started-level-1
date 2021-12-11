@@ -63,8 +63,8 @@ all: main-build
 main-build: 04_GPIO.elf secondary-outputs
 
 # Tool invocations
-04_GPIO.elf: $(OBJS) $(USER_OBJS) F:\__WORKSPACES\STM32CubeIDE\Udemy_STM32\04_GPIO\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "04_GPIO.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"F:\__WORKSPACES\STM32CubeIDE\Udemy_STM32\04_GPIO\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="04_GPIO.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+04_GPIO.elf: $(OBJS) $(USER_OBJS) /home/dananjaya/Projects/udemy-stm32-getting-started-level-1/04_GPIO/STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "04_GPIO.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"/home/dananjaya/Projects/udemy-stm32-getting-started-level-1/04_GPIO/STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="04_GPIO.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
