@@ -9,6 +9,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="D:\__Trainings\udemy-stm32-getting-started-level-1\04_4_Digits_Display"/>
 			<item value="F:\__WORKSPACES\STM32CubeIDE\Udemy_STM32\01_Clocks"/>
 		</list>
 	</section>
