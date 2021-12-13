@@ -54,5 +54,15 @@ void adc_EnableEOC_IT(void);
 
 void adc_DisableEOC_IT(void);
 
+/*
+ * @brief ADC multi-channel configuration
+ */
+void adc_MultiChannelConfig(void);
+
+/*
+ * @brief ADC DMA configuration
+ */
+void adc_MultiChannelDMAConfig(uint16_t *pAdcBuffer);
+
 
 #endif /* INC_ADC_H_ */
