@@ -77,3 +77,17 @@ bool adc_PollforEOC(uint32_t timeout) {
 uint16_t adc_ReadValue(void) {
   return (ADC1->DR & 0xFFF); // & 0xFFF to make sure output value is 12-bits.
 }
+
+void adc_EnableEOC_IT(void) {
+  // Enable EOC IT enable flag
+  SET_BIT(ADC1->CR1, ADC_CR1_EOCIE);
+  // ADC NVIC interrupt
+  NVIC_EnableIRQ(ADC1_IRQn);
+}
+
+void adc_DisableEOC_IT(void) {
+  // Enable EOC IT enable flag
+  CLEAR_BIT(ADC1->CR1, ADC_CR1_EOCIE);
+  // ADC NVIC interrupt
+  NVIC_DisableIRQ(ADC1_IRQn);
+}

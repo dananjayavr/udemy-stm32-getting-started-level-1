@@ -1,3 +1,8 @@
+connections/org.eclipse.remote.serial.core.connectionType/BP/serial.baudRate=11
+connections/org.eclipse.remote.serial.core.connectionType/BP/serial.byteSize=3
+connections/org.eclipse.remote.serial.core.connectionType/BP/serial.parity=0
+connections/org.eclipse.remote.serial.core.connectionType/BP/serial.portName=COM13
+connections/org.eclipse.remote.serial.core.connectionType/BP/serial.stopBits=0
 connections/org.eclipse.remote.serial.core.connectionType/BluePill_StarterKit/serial.baudRate=11
 connections/org.eclipse.remote.serial.core.connectionType/BluePill_StarterKit/serial.byteSize=3
 connections/org.eclipse.remote.serial.core.connectionType/BluePill_StarterKit/serial.parity=0

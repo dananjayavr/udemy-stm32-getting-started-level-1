@@ -1,11 +1,10 @@
 #include "main.h"
 
-bool extiFlag = 0;
+bool adcEoc = false;
+uint16_t adcValue = 0;
 
 int main(void)
 {
-  uint16_t adcValue = 0;
-
   // configure max clock speed (72 MHz)
   rcc_HSE_config();
   // configure SysTick timer
@@ -15,36 +14,35 @@ int main(void)
   uart_UART1_config();
   // config GPIO LED
   gpio_LED_config();
-  // config GPIO PB
-  gpio_PB_config();
-  // exti config
-  exti_buttonConfig();
+
   // ADC
   adc_GPIO_config();
-  //adc_SingleChannelConfig(ADC_SingleSelect_Potentiometer);
-  adc_SingleChannelConfig(ADC_SingleSelect_Joystick_x);
+  adc_SingleChannelConfig(ADC_SingleSelect_Potentiometer);
+  //adc_SingleChannelConfig(ADC_SingleSelect_Joystick_x);
+  adc_EnableEOC_IT();
 
   printf("Program is starting...\r\n");
+  adc_Start();
   while(1)
   {
-    adc_Start();
-    if(adc_PollforEOC(5))
+    if(adcEoc)
     {
+      adcEoc = false;
       adcValue = adc_ReadValue();
-    } else {
-      printf("ADC Failed!\r\n");
+      printf("Potentiometer = %d\r\n", (int)adcValue);
+      adc_Start();
     }
-    printf("Potentiometer = %d\r\n", (int)adcValue);
+
     gpio_LED_toggleGreen();
     rcc_msDelayTicks(300);
   }
 }
 
-void EXTI0_IRQHandler(void) {
-  NVIC_ClearPendingIRQ(EXTI0_IRQn);
-  SET_BIT(EXTI->PR, EXTI_PR_PIF0); // Clear pending interrupt also
-  CLEAR_BIT(EXTI->IMR, EXTI_IMR_IM0); // Masking it
-
-  extiFlag = true;
-  gpio_LED_toggleGreen();
+void ADC1_2_IRQHandler(void) {
+  if(ADC1->SR & ADC_SR_EOC) {
+    adcValue = adc_ReadValue();
+    NVIC_ClearPendingIRQ(ADC1_IRQn);
+    adcEoc = true;
+    gpio_LED_toggleRed();
+  }
 }

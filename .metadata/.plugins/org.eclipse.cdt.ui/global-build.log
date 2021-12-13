@@ -1,5 +1,6 @@
-22:41:21 **** Incremental Build of configuration Debug for project 06_ADC ****
+22:22:30 **** Incremental Build of configuration Debug for project 06_ADC ****
 make -j4 all 
+arm-none-eabi-gcc "../Peripherals/Src/adc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32F103xB -c -I"D:/__Trainings/udemy-stm32-getting-started-level-1/06_ADC/Core/Inc" -I"D:/__Trainings/udemy-stm32-getting-started-level-1/06_ADC/CMSIS/Include" -I"D:/__Trainings/udemy-stm32-getting-started-level-1/06_ADC/Peripherals/Inc" -I"D:/__Trainings/udemy-stm32-getting-started-level-1/06_ADC/Application/Display" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Peripherals/Src/adc.d" -MT"Peripherals/Src/adc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Peripherals/Src/adc.o"
 arm-none-eabi-gcc "../Peripherals/Src/exti.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32F103xB -c -I"D:/__Trainings/udemy-stm32-getting-started-level-1/06_ADC/Core/Inc" -I"D:/__Trainings/udemy-stm32-getting-started-level-1/06_ADC/CMSIS/Include" -I"D:/__Trainings/udemy-stm32-getting-started-level-1/06_ADC/Peripherals/Inc" -I"D:/__Trainings/udemy-stm32-getting-started-level-1/06_ADC/Application/Display" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Peripherals/Src/exti.d" -MT"Peripherals/Src/exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Peripherals/Src/exti.o"
 arm-none-eabi-gcc "../Peripherals/Src/gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32F103xB -c -I"D:/__Trainings/udemy-stm32-getting-started-level-1/06_ADC/Core/Inc" -I"D:/__Trainings/udemy-stm32-getting-started-level-1/06_ADC/CMSIS/Include" -I"D:/__Trainings/udemy-stm32-getting-started-level-1/06_ADC/Peripherals/Inc" -I"D:/__Trainings/udemy-stm32-getting-started-level-1/06_ADC/Application/Display" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Peripherals/Src/gpio.d" -MT"Peripherals/Src/gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Peripherals/Src/gpio.o"
 arm-none-eabi-gcc "../Peripherals/Src/rcc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32F103xB -c -I"D:/__Trainings/udemy-stm32-getting-started-level-1/06_ADC/Core/Inc" -I"D:/__Trainings/udemy-stm32-getting-started-level-1/06_ADC/CMSIS/Include" -I"D:/__Trainings/udemy-stm32-getting-started-level-1/06_ADC/Peripherals/Inc" -I"D:/__Trainings/udemy-stm32-getting-started-level-1/06_ADC/Application/Display" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Peripherals/Src/rcc.d" -MT"Peripherals/Src/rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Peripherals/Src/rcc.o"
@@ -15,11 +16,11 @@ arm-none-eabi-objdump -h -S  06_ADC.elf  > "06_ADC.list"
 arm-none-eabi-objcopy  -O ihex  06_ADC.elf  "06_ADC.hex"
 arm-none-eabi-objcopy  -O binary  06_ADC.elf  "06_ADC.bin"
    text	   data	    bss	    dec	    hex	filename
-  17340	    472	   1600	  19412	   4bd4	06_ADC.elf
+  17076	    472	   1600	  19148	   4acc	06_ADC.elf
 Finished building: default.size.stdout
-Finished building: 06_ADC.bin
-Finished building: 06_ADC.hex
  
+Finished building: 06_ADC.hex
+Finished building: 06_ADC.bin
  
  
 Finished building: 06_ADC.list

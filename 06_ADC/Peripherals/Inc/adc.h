@@ -47,4 +47,12 @@ bool adc_PollforEOC(uint32_t timeout);
  */
 uint16_t adc_ReadValue(void);
 
+/*
+ * @brief ADC Enable/Disable Interrupt - EOC
+ */
+void adc_EnableEOC_IT(void);
+
+void adc_DisableEOC_IT(void);
+
+
 #endif /* INC_ADC_H_ */
